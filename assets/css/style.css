@@ -1,0 +1,118 @@
+
+
+
+
+h1{
+    font-size: 20px;
+}
+
+/* em und rem können auch für Bilder benutzt werden */
+
+
+
+/* em verhält sich relativ zum Parent-Element
+in diesem Fall div
+em bezieht sich immer auf das Eltern-Element*/
+
+div{
+    font-size: 50px;
+}
+
+div p:first-child{ /* 25px  bei 50px im div*/
+    font-size: 0.5em;
+    
+}
+div p:nth-of-type(){  /* 35px */
+    font-size: 0.7em;
+}
+
+div p:last-child{ /* 50px */
+    font-size: 1em;
+}
+
+/* REM bezieht sich immer auf das ROOT ELEMENT 
+hier html
+Super praktisch für RESPONSIVES Arbeiten 
+
+*/
+
+html{
+    font-size: 10px;
+}
+
+
+h2:first-child{
+    font-size: 1rem;  /* 10px */
+
+}
+
+h2:nth-of-type(2){
+    font-size: 1.5rem;  /* 15px */
+}
+
+
+h2:last-child{
+    font-size: 3.8rem;  /* 38px */
+}
+
+/* % bezieht sich immer auf das Parent-Element 
+hier article  
+
+% bietet einen riesen Vorteil bei Bildern
+*/
+
+article{
+    width: 50%;
+}
+
+article div:first-child{
+    background: tomato;
+    height: 100px;
+    width: 30%;
+}
+
+article div:nth-of-type(2){
+    background: gold;
+    height: 100px;
+    width: 50%;
+}
+
+article div:nth-of-type(3){
+    background: coral;
+    height: 100px;
+    width: 70%;
+}
+
+article img{
+    width: 100%;
+}
+
+
+/* viewwidth vw und viewheight beziehen sich auf die Gesamthöhe und Gesamtbreite des Browsers 
+1vw= 1% breite vom Browser
+1vh= 1% Höhe vom Browser
+Scrollbar wird mitberchnet deswegen width: 99vh!!
+div section article macht Sinn 
+padding margin Aabstände sind bis 100 px cool; danach mit vh/vw!
+height funktioniert in 100% nicht! denn der Browser geht in die Höhe unendlich!nutze vh ! 
+*/
+
+main div:first-child{
+    width: 99vw;
+    height :50vh;
+    background: greenyellow;
+    margin: 10vh 0;
+}
+
+main div:nth-of-type(2){
+    width: 90vw;
+    height:50vh;
+    background: green;
+    margin: 10vh 0;
+}
+
+/* vmin und vmax nehmen jeweils den kleineren oder größeren Wert von vh oder vw */
+
+footer img{
+    width: 15vmax;
+}
